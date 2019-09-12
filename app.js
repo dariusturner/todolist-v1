@@ -6,16 +6,20 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
+app.set('view engine', 'ejs');
+
 app.get("/", function(req, res){
 
   var today = new Date();
   var currentDate = today.getDay();
+  var day = "";
 
   if (currentDate === 6 || currentDate === 0) {
-    res.sendFile(__dirname + "/weekend.html");
+    day = "Weekend";
   } else {
-    res.sendFile(__dirname + "/weekday.html");
+    day = "Weekday";
   }
+  res.render("list", {kindOfDay: day});
 });
 
 app.listen(port, function(){
