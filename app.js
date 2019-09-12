@@ -7,7 +7,15 @@ const app = express();
 const port = 3000;
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/index.html");
+
+  var today = new Date();
+  var currentDate = today.getDay();
+
+  if (currentDate === 6 || currentDate === 0) {
+    res.sendFile(__dirname + "/weekend.html");
+  } else {
+    res.sendFile(__dirname + "/weekday.html");
+  }
 });
 
 app.listen(port, function(){
