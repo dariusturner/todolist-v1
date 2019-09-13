@@ -8,6 +8,23 @@
 
     <h1><%= kindOfDay %></h1>
 
+    <h3>To Do List</h3>
+
+    <% if (newListItems.length < 1) { %>
+      <p>"Use the fields below to add to your To Do List"</p>
+    <% } %>
+
+    <ul>
+      <% for(var i = 0; i < newListItems.length; i++) { %>
+      <li><%= newListItems[i] %></li>
+    <% } %>
+    </ul>
+
+    <form action="/" method="post">
+      <input type="text" name="newItem" placeholder="Add a new item here">
+      <button type="submit" name="button">Add</button>
+    </form>
+
     <% if (kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
       <style>
         h1 {color: green;}
