@@ -20,6 +20,10 @@ h1 {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.center {
+  text-align: center;
+}
+
 #heading {
   background-color: #A683E3;
   text-align: center;
@@ -100,4 +104,14 @@ footer {
   color: white;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+#footer a {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #A683E3;
 }
