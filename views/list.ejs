@@ -3,28 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>To Do List</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/queries.css">
   </head>
   <body>
 
-    <h1><%= kindOfDay %></h1>
+    <div class="box" id="heading">
+      <h1><%= kindOfDay %></h1>
+    </div>
 
-    <h3>To Do List</h3>
-
+    <div class="box">
     <% if (newListItems.length < 1) { %>
-      <p>"Use the fields below to add items to your To Do List."</p>
+      <p class="intro">Add a list of things you need to do...</p>
     <% } %>
 
-    <ul>
       <% for(let i = 0; i < newListItems.length; i++) { %>
-      <li><%= newListItems[i] %></li>
+        <div class="item">
+          <input type="checkbox">
+          <p><%= newListItems[i] %></p>
+        </div>
     <% } %>
-    </ul>
 
-    <form action="/" method="post">
-      <input type="text" name="newItem" placeholder="Add a new item here">
-      <button type="submit" name="button">Add</button>
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="Add a new item here" autocomplete="off">
+      <button type="submit" name="button">+</button>
     </form>
+
+    </div>
 
     <% if (kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
       <style>
