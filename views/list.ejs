@@ -26,19 +26,10 @@
 
     <form class="item" action="/" method="post">
       <input type="text" name="newItem" placeholder="Add a new item here" autocomplete="off">
-      <button type="submit" name="button">+</button>
+      <button type="submit" name="list" value="<%= listTitle %>">+</button>
     </form>
 
     </div>
-
-    <% if (listTitle === "Saturday" || listTitle === "Sunday") { %>
-      <style>
-        h1 {color: green;}
-      </style>
-    <% } else { %>
-      <style>
-        h1 {color: black;}
-      </style>
-    <% } %>
+    
   </body>
 </html>

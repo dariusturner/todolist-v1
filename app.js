@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 
 let items = [];
+let workItems = [];
 
 app.set('view engine', 'ejs');
 
@@ -29,10 +30,20 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
-  var item = req.body.newItem;
-  items.push(item);
+  
+  let item = req.body.newItem;
 
-  res.redirect("/");
+  if (req.body.list === "Work List") {
+    workItems.push(item);
+    res.redirect("/work");
+  } else {
+      items.push(item);
+      res.redirect("/");
+    }
+});
+
+app.get("/work", function(req, res){
+  res.render("list", {listTitle: "Work List", newListItems: workItems});
 });
 
 app.listen(port, function(){
