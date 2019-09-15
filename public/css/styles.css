@@ -115,3 +115,20 @@ footer {
 #footer a:hover {
   color: #A683E3;
 }
+
+#footer .btn {
+  background: #fff;
+  border: 1px solid #A683E3;
+  border-radius: 20px;
+  line-height: 60px;
+  padding: 20px;
+}
+
+#footer .nav {
+  margin-bottom: 20px;
+}
+
+#footer .nav .btn:hover {
+  background: #A683E3;
+  color: #fff;
+}
