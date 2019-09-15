@@ -9,7 +9,9 @@ const port = 3000;
 let items = [];
 
 app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded());
+app.use(express.static("public"));
 
 app.get("/", function(req, res){
 
