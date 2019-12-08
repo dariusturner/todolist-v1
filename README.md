@@ -1,5 +1,5 @@
 # todolist-v1
-To do list web app that allows vistors to create their own to do list for the day. The project also has a work and about pages to use rather than the home page.
+To do list web app that allows vistors to create their own to do list for the day. The project also has a can create custom pages by adding page name in the url and about pages to use rather than the home page.
 
 # Installation Instructions
 This repo uses Node.js, so when you download/clone the repo please go to your terminal and cd into the project's folder and then enter the command below:
