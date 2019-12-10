@@ -14,7 +14,11 @@ This will then run the web app on http://localhost:3000/ by default.
 - HTML
 - CSS
 - Node.js
+- MongoDB
+- MongoDB Atlas
+- Served on AWS Cloud
 - Express.js
 - body-parser NPM
 - request NPM
+- lodash
 - Export my own custom made module to server to calculate the date or day
