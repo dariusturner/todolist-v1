@@ -7,7 +7,10 @@ const _ = require("lodash");
 const date = require(__dirname + "/date.js");
 
 const app = express();
-const port = 3000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 const day = date.getDate();
 
 app.set('view engine', 'ejs');
@@ -15,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://admin-darius:test111@cluster0-7ixq2.mongodb.net/todolistDB", {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String
@@ -141,5 +144,5 @@ app.get("/about", function(req, res){
 });
 
 app.listen(port, function(){
-  console.log("Server started on port " + port);
+  console.log("Server has started successfully!");
 });
